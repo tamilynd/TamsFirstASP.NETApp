@@ -20,7 +20,7 @@ input[type=number] {
     width: 50px;
     box-sizing: border-box;
 }
-
+/*everything below here is for placing divs side-by-side*/
 .flex-container {
     display: flex;
     width: 75%;

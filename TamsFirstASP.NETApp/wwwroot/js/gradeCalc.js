@@ -7,10 +7,12 @@ const percentIntex = 0.1;
 
 function handleForm(event) { event.preventDefault(); } 
 
+//sets inner HTML value for grade percentage calculated in set listener function
 function setValue(grade) {
 	document.getElementById("finalGrade").innerHTML = grade + " %";
 }
 
+//calculates letter grade and sets innerhtml for it
 function setLetter(grade) {
 	var letterGrade
 	var color
@@ -67,6 +69,7 @@ function setLetter(grade) {
 	document.getElementById("letterGrade").style.color = color;
 }
 
+//pull grades and compute final grade percentage
 submit.addEventListener("click", function(){
 	var assignment = document.getElementById("assignments").value;
 	var project = document.getElementById("projects").value;
