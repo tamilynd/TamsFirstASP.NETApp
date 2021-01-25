@@ -1,15 +1,13 @@
-﻿var submit = document.getElementById("submit");
-const percentAssign = 0.5;
+﻿const percentAssign = 0.5;
 const percentProject = 0.1;
 const percentQuiz = 0.1;
 const percentExam = 0.2;
 const percentIntex = 0.1;
 
-function handleForm(event) { event.preventDefault(); } 
 
 //sets inner HTML value for grade percentage calculated in set listener function
 function setValue(grade) {
-	document.getElementById("finalGrade").innerHTML = grade + " %";
+	$("#finalGrade").html(grade + " %");
 }
 
 //calculates letter grade and sets innerhtml for it
@@ -65,17 +63,17 @@ function setLetter(grade) {
 		color = "green";
 	}
 
-	document.getElementById("letterGrade").innerHTML = letterGrade;
-	document.getElementById("letterGrade").style.color = color;
+	$("#letterGrade").html(letterGrade);
+	$("#letterGrade").css({ 'color': color });
 }
 
 //pull grades and compute final grade percentage
-submit.addEventListener("click", function(){
-	var assignment = document.getElementById("assignments").value;
-	var project = document.getElementById("projects").value;
-	var quiz = document.getElementById("quizzes").value;
-	var exam = document.getElementById("exams").value;
-	var intex = document.getElementById("intex").value;
+$("#submit").click( function(){
+	var assignment = $("#assignments").val();
+	var project = $("#projects").val();
+	var quiz = $("#quizzes").val();
+	var exam = $("#exams").val();
+	var intex = $("#intex").val();
 
 	finalGrade = (
 		assignment * percentAssign +

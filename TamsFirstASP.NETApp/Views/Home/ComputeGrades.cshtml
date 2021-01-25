@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Compute Grades";
+    ViewBag.Header = "Tam Hogan Computes Your Grades";
+}
+
+@model ComputeGradesModel
+
+<body>
+    <div class="flex-container">
+        <div class="flex-child">
+            <h2>Grade Form</h2>
+            <form method="post">
+                <label>Assignments:</label>
+                <input id="assignments" type="number" asp-for="assignments" /> %
+                <br />
+                <label>Group Project:</label>
+                <input id="projects" type="number" asp-for="projects" /> %
+                <br />
+                <label>Quizzes:</label>
+                <input id="quizzes" type="number" asp-for="quizzes" /> %
+                <br />
+                <label>Exams:</label>
+                <input id="exams" type="number" asp-for="exams" /> %
+                <br />
+                <label>INTEX:</label>
+                <input id="intex" type="number" asp-for="intex" /> %
+                <br />
+                <input type="submit" value="Calculate Grade" id="submit" />
+                <div asp-validation-summary="All"></div>
+            </form>
+        </div>
+        <div class="flex-child result">
+            <br />
+            <h3>Projected Final Grade: </h3>
+            <h2 id="finalGrade">0.00%</h2>
+            <h1 id="letterGrade">???</h1>
+        </div>
+    </div>
+
+</body>
